@@ -1,16 +1,10 @@
 public class Isogram {
     public static void main(String[] args) {
-        System.out.println(isIsogram("DimadD"));
+        System.out.println(isIsogram("DimaD"));// dimad -> d i m a d -> d i m a -> 4
     }
 
     public static boolean isIsogram(String str) {
-        char[] characters = str.toCharArray();
-        for (int i = 0; i < characters.length; i++) {
-            for (int j = 0; j < characters.length; j++) {
-                if (i==j) break;
-                if (Character.toLowerCase(characters[i])==Character.toLowerCase(characters[j])) return false;
-                }
-            }
-        return true;
+        System.out.println(str.toLowerCase().chars().distinct().count());
+        return str.length() == str.toLowerCase().chars().distinct().count();
         }
     }
